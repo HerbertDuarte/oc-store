@@ -1,13 +1,12 @@
 <script setup>
   import Header from './components/Header.vue';
   import './style.css'
+  import { RouterView } from 'vue-router';
 </script>
 
 <template>
   <Header></Header>
-  <main>
-    <RouterView class="pt-16 sm:pt-28 w-full"></RouterView>
-  </main>
+  <RouterView class="pt-16 sm:pt-28 w-full"></RouterView>
 </template>
 
 <script>
