@@ -5,7 +5,7 @@
 
 <template>
   <Header></Header>
-  <RouterView class="pt-16 sm:pt-28"></RouterView>
+  <RouterView class="pt-16 sm:pt-28 w-full"></RouterView>
 </template>
 
 <script>
