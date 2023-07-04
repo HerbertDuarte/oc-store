@@ -24,7 +24,7 @@ import {routes} from '../routes'
       </form>
 
       <!-- icones cart / search / profile -->
-      <div class="flex items-center gap-1 xs:gap-3">
+      <div class="flex items-center gap-3">
         <RouterLink class="flex justify-center items-center gap-2" to="/login">
           <User2/>
           <span class="text-xl hidden md:block">Faça o Login</span>
@@ -41,17 +41,18 @@ import {routes} from '../routes'
 
 
     <!-- navegação -->
-    <div :class='{ "hidden" : isClose, "flex items-center justify-between md:flex-row flex-col pb-4 sm:pb-0 sm:block " : true}'>
+    <div :class='{ "hidden" : isClose, "flex items-center justify-between md:flex-row flex-col pb-0 sm:block " : true}'>
       <nav class="sm:h-10 inline-flex items-center justify-start gap-2 md:gap-4 flex-col sm:flex-row text-red-100">
-        <RouterLink 
-          v-if="routes" 
-          v-for="page in routes" 
+        <div v-for="page in routes">
+          <RouterLink 
+          v-if="page.list" 
           :to="page.path" 
           :class='{"md:text-xl text-lg px-1 py-2 rounded" : true, "text-white font-bold" : pathName == page.path} '
           v-on:click="changePage(page.path)"  
           >
           {{ page.name }}
         </RouterLink>
+      </div>
       </nav>
     </div>
   </header>
